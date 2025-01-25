@@ -2,9 +2,10 @@
 
 :root {
   --white: #f5f9f8;
+  --textWhite: rgba(245, 249, 248, 0.6);
   --black: #01031A;
   --headerBlack: #1e1e27;
-  --contentBlack: #28242a;
+  --contentBlack: #2e2e37;
   --red: #df0139;
   --green: #08EC4B;
   --light: rgba(226, 226, 226, 0.1);
@@ -45,6 +46,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: var(--headerBlack);
+  box-shadow: 0 2px 4px 1px var(--shadow);
 }
 
 header .profileImage {
@@ -101,6 +103,7 @@ header .iconMenuToggle {
   background-color: transparent;
   border: solid 2px var(--red);
   position: relative;
+  transition: var(--transition);
 }
 header .iconMenuToggle > i {
   position: absolute;
@@ -109,17 +112,23 @@ header .iconMenuToggle > i {
   transform: translate(-50%, -50%);
   color: var(--red);
 }
+header .iconMenuToggle.rotated{
+  transform: scaleX(-1);
+}
 
 /*navbar*/
 .verticalNavbar {
-  width: auto;
+  width: 200px;
   height: calc(100vh - 60px);
   padding: 1em;
   position: fixed;
   top: 60px;
   left: 0;
   background-color: var(--headerBlack);
+  box-shadow: 2px 0 4px 1px var(--shadow);
   transition: var(--transition);
+}.verticalNavbar.hidden{
+  transform: translateX(-100%);
 }
 
 .verticalNavbar .navlist {
@@ -145,4 +154,37 @@ header .iconMenuToggle > i {
   border: none;
   color: var(--red);
 
+}
+
+/* main content */
+.main-content{
+  display: flex;
+  margin-top: 60px;
+}
+
+.content{
+  margin-left: 200px;
+  padding: 2em;
+  transition: var(--transition);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+} .content.expanded{
+  margin-left: 0;
+}
+
+.content .container{
+  border: solid 1px var(--textWhite);
+  border-radius: 4px;
+  padding: 1em;
+  box-shadow: 1px 2px 4px 1px var(--light);
+}
+
+.content .container .containerTitle{
+  font-size: 2em;
+  font-weight: 600;
+}
+.content .container .containerParagraph{
+  color: var(--textWhite);
+  font-size: 1.1em;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,10 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
+    <!------------------------------->
     <!-- start header -->
     <header>
         <!-- profile image -->
@@ -24,30 +27,34 @@
         </label>
 
         <!-- toggle menu icon -->
-        <div class="iconMenuToggle" id="menu">
+        <div class="iconMenuToggle" id="menu" title="show menu">
             <i class="fa-solid fa-angles-left"></i>
-        </div> 
+        </div>
     </header>
     <!-- end header -->
-   
-    <!-- start vertical menu -->
-    <nav class="verticalNavbar">
-        <!-- nav links-->
-        <ul class="navlist">
 
-            <!-- home -->
-            <li class="navItem">
-                <a href="#" class="navlink">
-                    <i class="fa-solid fa-house"></i>
-                    <span class="linkName">Home</span>
-                </a>
-            </li>
+    <!------------------------------->
+    <!-- starts main content -->
+    <main class="main-content" id="mainContent">
 
-            <!-- my courses -->
+        <!-- starts sidebar -->
+        <nav class="verticalNavbar" id="navBar">
+            <!-- navlist -->
+            <ul class="navlist">
+
+                <!-- home -->
+                <li class="navItem">
+                    <a href="#" class="navlink">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="linkName">Home</span>
+                    </a>
+                </li>
+
+                <!-- my courses -->
                 <!-- dropdown menu -->
                 <li class="dropdownMenu">
                     <button class="dropdownButton">
-                        <i class="fa-solid fa-book-open"></i> 
+                        <i class="fa-solid fa-book-open"></i>
                         <span class="linkName">My Courses</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </button>
@@ -71,75 +78,91 @@
                     </ul>
                 </li>
 
-            <!-- calendar -->
-            <li class="navItem">
-                <a href="#" class="navlink">
-                    <i class="fa-solid fa-calendar"></i>
-                    <span class="linkName">Calendar</span>
-                </a>
-            </li>
+                <!-- calendar -->
+                <li class="navItem">
+                    <a href="#" class="navlink">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span class="linkName">Calendar</span>
+                    </a>
+                </li>
 
-            <!-- profile -->
+                <!-- profile -->
                 <!-- dropdown menu -->
-            <li class="dropdownMenu">
-                <button class="dropdownButton">
-                    <i class="fa-solid fa-user"></i>
-                    <span class="linkName">Profile</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <!-- submenu -->
-                <ul class="submenu">
-                    <li class="navItem">
-                        <a href="" class="navlink">
-                            <i class="fa-solid fa-address-card"></i>
-                            <span class="linkName">Mi profile</span>
-                        </a>
-                    </li>
-                    <li class="navItem">
-                        <a href="" class="navlink">
-                            <i class="fa-solid fa-key"></i>
-                            <span class="linkName">Password</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+                <li class="dropdownMenu">
+                    <button class="dropdownButton">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="linkName">Settings</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <!-- submenu -->
+                    <ul class="submenu">
+                        <li class="navItem">
+                            <a href="" class="navlink">
+                                <i class="fa-solid fa-address-card"></i>
+                                <span class="linkName">Mi profile</span>
+                            </a>
+                        </li>
+                        <li class="navItem">
+                            <a href="" class="navlink">
+                                <i class="fa-solid fa-key"></i>
+                                <span class="linkName">Password</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-            <!-- logout -->
-            <li class="navItem">
-                <a href="" class="navlink">
-                    <i class="fa-solid fa-door-open"></i>
-                    <span class="linkName">LogOut</span>
-                </a>
-            </li>
+                <!-- logout -->
+                <li class="navItem">
+                    <a href="" class="navlink">
+                        <i class="fa-solid fa-door-open"></i>
+                        <span class="linkName">LogOut</span>
+                    </a>
+                </li>
 
-        </ul>
+            </ul>
 
-    </nav>
+        </nav>
+        <!-- ends sidebar-->
 
-    <!-- start main content-->
-    <main class="content">
+        <!-- starts main content -->
+        <section class="content" id="contentSection">
 
-        <div class="container">
-            <h1 class="containerTitle">Heading</h1>
-            <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime expedita aperiam, cum tenetur tempora iste officia excepturi laboriosam porro placeat repellat magni quas fugit consectetur, maiores amet omnis, ut facere! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae culpa sequi incidunt tempore. Ullam debitis iste veniam, totam, nemo nesciunt pariatur ipsam consequuntur ea reiciendis consequatur est architecto. Eveniet repellat praesentium, temporibus nulla ab, laboriosam quam recusandae sint qui ut tenetur provident saepe nostrum beatae aliquid ex ipsam quo quibusdam quidem obcaecati nemo cupiditate dolorem optio iste. Et, ratione. Iusto ipsam facilis repellendus quasi iure expedita iste cum porro ad, corrupti eligendi numquam dignissimos soluta magnam dicta libero nihil ullam vel, ratione fugit cumque amet officiis. Amet ipsam minima dolorum, repellendus adipisci necessitatibus. Quod recusandae dolore reiciendis quo voluptatem veniam quae. Ut officiis qui corrupti veritatis eveniet impedit? Ab explicabo beatae, inventore illum omnis aspernatur iste at maxime saepe culpa consequatur doloribus recusandae! Quia rerum aperiam tempora veritatis deleniti explicabo? Nisi, ea! Nobis officiis deserunt inventore placeat repellendus eligendi vel alias laborum non. Numquam corrupti incidunt saepe, voluptatibus vero harum rem ex dicta nesciunt laborum aliquam error minima, dolore nulla quo magni ipsa dolor! Consequuntur esse totam repudiandae, recusandae veritatis sapiente iure sint debitis, ipsum voluptatem atque ducimus saepe? Quaerat beatae rem, laudantium harum ea facilis porro earum expedita aliquid vero, neque voluptate eius dicta iure quae. Aspernatur, quidem sunt?
-        </div>
+            <!-- item -->
+            <div class="container">
+                <h1 class="containerTitle">Heading</h1>
+                <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
+            </div>
 
-        <div class="container">
-            <h1 class="containerTitle">Heading</h1>
-            <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores eius harum et rem ad cupiditate sed dolorem assumenda exercitationem totam optio est sit, consequatur enim sunt quidem laborum ratione incidunt sapiente soluta fuga quos iure animi! Odit vel vero labore repudiandae tenetur veritatis suscipit nesciunt, nostrum et eveniet laudantium qui ipsa dolorem voluptate ullam minima eos nulla modi cumque? Distinctio aspernatur facilis ipsa eveniet doloremque error perferendis voluptate, tempora quo facere optio perspiciatis magni numquam adipisci! Alias officiis inventore dolores voluptate ea obcaecati quasi ullam fugit asperiores beatae. Nihil incidunt dolorum nam magnam, est dicta illum dolore sit voluptatem. Nobis.
-        </div>
+            <!-- item -->
+            <div class="container">
+                <h1 class="containerTitle">Heading</h1>
+                <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
+            </div>
 
-        <div class="container">
-            <h1 class="containerTitle">Heading</h1>
-            <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum nesciunt nobis totam adipisci veniam, quae ex ipsam consectetur qui dolore doloremque odit sed magni tenetur sunt beatae delectus amet mollitia quas est praesentium sit facere. Ducimus nulla labore vitae odit id iusto. Illo, cumque nihil maiores in rerum aspernatur eaque sint explicabo, error, perspiciatis ipsam. Illum, eius magnam enim minima illo at dolorem amet quod minus doloribus molestias ducimus iure commodi libero? Distinctio a consequuntur explicabo numquam aperiam et eligendi officia eius sed id sapiente debitis quisquam nemo, aliquam expedita, exercitationem aliquid voluptatibus delectus earum repellat! Ex accusamus vitae facere mollitia magni laboriosam sunt sapiente ut necessitatibus adipisci reprehenderit aspernatur facilis delectus, eum odit reiciendis voluptas, omnis iure cupiditate culpa minus ad et! Perferendis dolores incidunt, reprehenderit nobis voluptate totam sit dolorum voluptatibus tempora non et! Quibusdam earum neque rem, natus sit consequuntur exercitationem expedita nostrum dolor eius deleniti aut.
-        </div>
+            <!-- item -->
+            <div class="container">
+                <h1 class="containerTitle">Heading</h1>
+                <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
+            </div>
+            <!-- item -->
+            <div class="container">
+                <h1 class="containerTitle">Heading</h1>
+                <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
+            </div>
+
+            <!-- item -->
+            <div class="container">
+                <h1 class="containerTitle">Heading</h1>
+                <p class="containerParagraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ullam quasi fugit, rerum nobis obcaecati cum impedit similique quae quaerat iusto cupiditate dolor id alias, architecto voluptatem perferendis harum eaque.</p>
+            </div>
+
+        </section>
+        <!-- ends main content -->
 
     </main>
-    <!-- end main content -->
+    <!-- ends main content -->
 
     <script src="./src/main.js"></script>
 </body>
+
 </html>
