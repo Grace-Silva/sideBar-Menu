@@ -11,7 +11,7 @@
 
     <!-- start header -->
     <header>
-        <!-- logo container -->
+        <!-- profile image -->
         <div class="profileImage">
             <img src="./img/avatar Grace4.jpg" alt="">
             <span class="state"></span>
@@ -35,15 +35,8 @@
         <!-- nav links-->
         <ul class="navlist">
 
-            <!-- company logo -->
-            <li>
-                <a href="#" class="navlink">
-                    <span class="logoName">logoName</span>
-                </a>
-            </li>
-
             <!-- home -->
-            <li>
+            <li class="navItem">
                 <a href="#" class="navlink">
                     <i class="fa-solid fa-house"></i>
                     <span class="linkName">Home</span>
@@ -52,7 +45,7 @@
 
             <!-- my courses -->
                 <!-- dropdown menu -->
-                <li>
+                <li class="dropdownMenu">
                     <button class="dropdownButton">
                         <i class="fa-solid fa-book-open"></i> 
                         <span class="linkName">My Courses</span>
@@ -60,17 +53,17 @@
                     </button>
                     <!-- submenu -->
                     <ul class="submenu">
-                        <li>
+                        <li class="navItem">
                             <a href="" class="navlink">
                                 <span class="linkName">Course 1</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="navItem">
                             <a href="" class="navlink">
                                 <span>Course 1</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="navItem">
                             <a href="" class="navlink">
                                 <span class="linkName">Course 1</span>
                             </a>
@@ -79,7 +72,7 @@
                 </li>
 
             <!-- calendar -->
-            <li>
+            <li class="navItem">
                 <a href="#" class="navlink">
                     <i class="fa-solid fa-calendar"></i>
                     <span class="linkName">Calendar</span>
@@ -88,7 +81,7 @@
 
             <!-- profile -->
                 <!-- dropdown menu -->
-            <li>
+            <li class="dropdownMenu">
                 <button class="dropdownButton">
                     <i class="fa-solid fa-user"></i>
                     <span class="linkName">Profile</span>
@@ -96,13 +89,13 @@
                 </button>
                 <!-- submenu -->
                 <ul class="submenu">
-                    <li>
+                    <li class="navItem">
                         <a href="" class="navlink">
                             <i class="fa-solid fa-address-card"></i>
                             <span class="linkName">Mi profile</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="navItem">
                         <a href="" class="navlink">
                             <i class="fa-solid fa-key"></i>
                             <span class="linkName">Password</span>
@@ -112,7 +105,7 @@
             </li>
 
             <!-- logout -->
-            <li>
+            <li class="navItem">
                 <a href="" class="navlink">
                     <i class="fa-solid fa-door-open"></i>
                     <span class="linkName">LogOut</span>
@@ -120,6 +113,7 @@
             </li>
 
         </ul>
+
     </nav>
 
     <!-- start main content-->
