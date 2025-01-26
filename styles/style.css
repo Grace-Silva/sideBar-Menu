@@ -2,18 +2,25 @@
 
 /* paleta de colores para ambos modos */
 :root {
-  --white: #f5f9f8;
-  --textWhite: rgba(245, 249, 248, 0.6);
-  --black: #01031a;
-  --headerBlack: #1e1e27;
-  --contentBlack: #2e2e37;
+  --mainColor: #1e1e27;
+  --contentColor: #2e2e37;
+  --iconsColor: #f5f9f8;
+  --textColor: rgba(245, 249, 248, 0.7);
+  /* estos colores no cambian */
   --red: #df0139;
   --rubiRed: #e0115f;
   --green: #08ec4b;
-  --light: rgba(226, 226, 226, 0.1);
-  --shadow: #28242a;
-  --transition: 0.2s all ease-in-out;
-  /* light mode */
+  --glow: rgba(40, 36, 42, 0.6);
+  --transition: 0.2s all ease-in;
+}
+
+/* paleta de colores para el modo claro */
+.lightMode {
+  --mainColor: #f5f9f8;
+  --contentColor: #ededed;
+  --iconsColor: #1e1e27;
+  --textColor: rgba(0, 0, 0, 0.7);
+  --glow:rgba(255, 255, 255, 0.6);
 }
 
 * {
@@ -24,16 +31,16 @@
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1.1px;
-  color: var(--white);
   text-decoration: none;
   list-style: none;
 }
 
+/* inicia en modo oscuro */
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--contentBlack);
-  color: var(--white);
+  background-color: var(--contentColor);
+  color: var(--iconsColor);
 }
 
 /* header */
@@ -48,8 +55,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--headerBlack);
-  box-shadow: 0 2px 4px 1px var(--shadow);
+  background-color: var(--mainColor);
+  box-shadow: 0 2px 4px 1px var(--glow);
 }
 
 header .profileImage {
@@ -75,6 +82,7 @@ header .profileImage .state {
   bottom: 0;
   right: 0;
   box-shadow: 0 0 4px 2px #08ec4b;
+  cursor: pointer;
 }
 header .profileImage .state.offline {
   background-color: var(--red);
@@ -82,7 +90,8 @@ header .profileImage .state.offline {
 }
 
 header .searchContainer {
-  border: 1px solid var(--light);
+  border: 1px solid var(--glow);
+  box-shadow: 0 2px 4px 1px var(--glow);
   padding: 8px 16px;
   border-radius: 24px;
   width: calc(40% - 36px);
@@ -98,6 +107,7 @@ header .searchContainer > input {
   background-color: transparent;
   border: none;
   outline: none;
+  color: var(--iconsColor);
 }
 
 header .iconMenuToggle {
@@ -131,8 +141,8 @@ header .iconMenuToggle.rotated {
   position: fixed;
   top: 60px;
   left: 0;
-  background-color: var(--headerBlack);
-  box-shadow: 2px 0 4px 1px var(--shadow);
+  background-color: var(--mainColor);
+  box-shadow: 2px 0 4px 1px var(--glow);
   transition: var(--transition);
 }
 .verticalNavbar.hidden {
@@ -148,10 +158,15 @@ header .iconMenuToggle.rotated {
   justify-content: space-evenly;
 }
 
+.verticalNavbar .navlist .navItem .navlink{
+  color: var(--iconsColor);
+}
+
 .verticalNavbar .navlist .navItem,
 .verticalNavbar .navlist .dropdownButton {
   padding: 1em;
   text-transform: capitalize;
+  color: var(--iconsColor);
   cursor: pointer;
   opacity: 0.6;
   transition: var(--transition);
@@ -163,7 +178,6 @@ header .iconMenuToggle.rotated {
 .verticalNavbar .navlist .dropdownButton {
   background-color: transparent;
   border: none;
-  color: var(--red);
 }
 
 /* main content */
@@ -178,17 +192,17 @@ header .iconMenuToggle.rotated {
   transition: var(--transition);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  gap: 1.6em;
 }
 .content.expanded {
   margin-left: 0;
 }
 
 .content .container {
-  border: solid 1px var(--textWhite);
+  border: solid 1px var(--glow);
   border-radius: 4px;
   padding: 1em;
-  box-shadow: 1px 2px 4px 1px var(--light);
+  box-shadow: 2px 2px 8px 4px var(--glow);
 }
 
 .content .container .containerTitle {
@@ -196,6 +210,6 @@ header .iconMenuToggle.rotated {
   font-weight: 600;
 }
 .content .container .containerParagraph {
-  color: var(--textWhite);
+  color: var(--textColor);
   font-size: 1.1em;
 }
