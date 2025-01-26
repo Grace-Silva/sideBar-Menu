@@ -11,13 +11,13 @@ const estado = document.getElementById("stateIcon");
 //let color = "#ff4000";
 
 function cambiar() {
-    botonMenu.classList.toggle("rotated");
-    barraDeNavegacion.classList.toggle("hidden");
-    seccionContenido.classList.toggle("expanded");
-    //estado.style.backgroundColor=color;
+  botonMenu.classList.toggle("rotated");
+  barraDeNavegacion.classList.toggle("hidden");
+  seccionContenido.classList.toggle("expanded");
+  //estado.style.backgroundColor=color;
 }
 function desconectar() {
-    estado.classList.toggle("offline");
+  estado.classList.toggle("offline");
 }
 
 botonMenu.addEventListener("click", cambiar);

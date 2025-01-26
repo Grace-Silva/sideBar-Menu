@@ -1,16 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* paleta de colores para ambos modos */
 :root {
   --white: #f5f9f8;
   --textWhite: rgba(245, 249, 248, 0.6);
-  --black: #01031A;
+  --black: #01031a;
   --headerBlack: #1e1e27;
   --contentBlack: #2e2e37;
   --red: #df0139;
-  --green: #08EC4B;
+  --rubiRed: #e0115f;
+  --green: #08ec4b;
   --light: rgba(226, 226, 226, 0.1);
   --shadow: #28242a;
   --transition: 0.2s all ease-in-out;
+  /* light mode */
 }
 
 * {
@@ -71,8 +74,11 @@ header .profileImage .state {
   position: absolute;
   bottom: 0;
   right: 0;
-} header .profileImage .state.offline{
+  box-shadow: 0 0 4px 2px #08ec4b;
+}
+header .profileImage .state.offline {
   background-color: var(--red);
+  box-shadow: 0 0 4px 2px #e0115f;
 }
 
 header .searchContainer {
@@ -96,7 +102,7 @@ header .searchContainer > input {
 
 header .iconMenuToggle {
   border-radius: 50%;
-  padding: .4em;
+  padding: 0.4em;
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -104,6 +110,7 @@ header .iconMenuToggle {
   border: solid 2px var(--red);
   position: relative;
   transition: var(--transition);
+  box-shadow: 0 0 4px 4px rgba(224, 17, 96, 0.224);
 }
 header .iconMenuToggle > i {
   position: absolute;
@@ -112,8 +119,8 @@ header .iconMenuToggle > i {
   transform: translate(-50%, -50%);
   color: var(--red);
 }
-header .iconMenuToggle.rotated{
-  transform: scaleX(-1);
+header .iconMenuToggle.rotated {
+  transform: rotate(180deg);
 }
 
 /*navbar*/
@@ -127,7 +134,8 @@ header .iconMenuToggle.rotated{
   background-color: var(--headerBlack);
   box-shadow: 2px 0 4px 1px var(--shadow);
   transition: var(--transition);
-}.verticalNavbar.hidden{
+}
+.verticalNavbar.hidden {
   transform: translateX(-100%);
 }
 
@@ -140,51 +148,54 @@ header .iconMenuToggle.rotated{
   justify-content: space-evenly;
 }
 
-.verticalNavbar .navlist .navItem, .verticalNavbar .navlist .dropdownButton {
+.verticalNavbar .navlist .navItem,
+.verticalNavbar .navlist .dropdownButton {
   padding: 1em;
   text-transform: capitalize;
   cursor: pointer;
-  opacity: .6;
+  opacity: 0.6;
   transition: var(--transition);
-} .verticalNavbar .navlist .navItem:hover, .verticalNavbar .navlist .dropdownButton:hover{
+}
+.verticalNavbar .navlist .navItem:hover,
+.verticalNavbar .navlist .dropdownButton:hover {
   opacity: 1;
 }
-.verticalNavbar .navlist .dropdownButton{
+.verticalNavbar .navlist .dropdownButton {
   background-color: transparent;
   border: none;
   color: var(--red);
-
 }
 
 /* main content */
-.main-content{
+.main-content {
   display: flex;
   margin-top: 60px;
 }
 
-.content{
+.content {
   margin-left: 200px;
   padding: 2em;
   transition: var(--transition);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
-} .content.expanded{
+}
+.content.expanded {
   margin-left: 0;
 }
 
-.content .container{
+.content .container {
   border: solid 1px var(--textWhite);
   border-radius: 4px;
   padding: 1em;
   box-shadow: 1px 2px 4px 1px var(--light);
 }
 
-.content .container .containerTitle{
+.content .container .containerTitle {
   font-size: 2em;
   font-weight: 600;
 }
-.content .container .containerParagraph{
+.content .container .containerParagraph {
   color: var(--textWhite);
   font-size: 1.1em;
 }
