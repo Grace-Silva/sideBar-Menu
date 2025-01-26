@@ -71,7 +71,7 @@ header .profileImage .state {
   position: absolute;
   bottom: 0;
   right: 0;
-} header .profileImage .state.online{
+} header .profileImage .state.offline{
   background-color: var(--red);
 }
 

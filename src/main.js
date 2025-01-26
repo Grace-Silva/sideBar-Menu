@@ -6,11 +6,19 @@ const botonMenu = document.getElementById("menu");
 const barraDeNavegacion = document.getElementById("navBar");
 /* sección de contenido  */
 const seccionContenido = document.getElementById("contentSection");
+/* botón de estado */
+const estado = document.getElementById("stateIcon");
+//let color = "#ff4000";
 
 function cambiar() {
     botonMenu.classList.toggle("rotated");
     barraDeNavegacion.classList.toggle("hidden");
     seccionContenido.classList.toggle("expanded");
+    //estado.style.backgroundColor=color;
+}
+function desconectar() {
+    estado.classList.toggle("offline");
 }
 
 botonMenu.addEventListener("click", cambiar);
+estado.addEventListener("click", desconectar);
