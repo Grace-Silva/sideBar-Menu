@@ -10,17 +10,17 @@
   --red: #df0139;
   --rubiRed: #e0115f;
   --green: #08ec4b;
-  --glow: rgba(40, 36, 42, 0.6);
+  --glow: rgba(30, 30, 39, 0.4);  
   --transition: 0.2s all ease-in;
 }
 
 /* paleta de colores para el modo claro */
 .lightMode {
   --mainColor: #f5f9f8;
-  --contentColor: #ededed;
+  --contentColor: #f1f1f1;
   --iconsColor: #1e1e27;
-  --textColor: rgba(0, 0, 0, 0.7);
-  --glow:rgba(255, 255, 255, 0.6);
+  --textColor: rgba(0, 0, 0, 0.6);
+  --glow: rgba(30, 30, 19, 0.1);
 }
 
 * {
@@ -56,6 +56,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
   box-shadow: 0 2px 4px 1px var(--glow);
 }
 
@@ -81,7 +82,7 @@ header .profileImage .state {
   position: absolute;
   bottom: 0;
   right: 0;
-  box-shadow: 0 0 4px 2px #08ec4b;
+  box-shadow: 0 0 4px 1px #08ec4b;
   cursor: pointer;
 }
 header .profileImage .state.offline {
@@ -91,7 +92,7 @@ header .profileImage .state.offline {
 
 header .searchContainer {
   border: 1px solid var(--glow);
-  box-shadow: 0 2px 4px 1px var(--glow);
+  background-color: var(--contentColor);
   padding: 8px 16px;
   border-radius: 24px;
   width: calc(40% - 36px);
@@ -142,6 +143,7 @@ header .iconMenuToggle.rotated {
   top: 60px;
   left: 0;
   background-color: var(--mainColor);
+  border: 1px solid var(--mainColor);
   box-shadow: 2px 0 4px 1px var(--glow);
   transition: var(--transition);
 }
@@ -202,7 +204,7 @@ header .iconMenuToggle.rotated {
   border: solid 1px var(--glow);
   border-radius: 4px;
   padding: 1em;
-  box-shadow: 2px 2px 8px 4px var(--glow);
+  box-shadow: 4px 4px 8px 4px var(--glow);
 }
 
 .content .container .containerTitle {

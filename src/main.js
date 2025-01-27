@@ -16,9 +16,9 @@ function cambiar() {
   seccionContenido.classList.toggle("expanded");
   //estado.style.backgroundColor=color;
 }
-function desconectar() {
+function cambiarEstado() {
   estado.classList.toggle("offline");
 }
 
 botonMenu.addEventListener("click", cambiar);
-estado.addEventListener("click", desconectar);
+estado.addEventListener("click", cambiarEstado);
