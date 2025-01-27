@@ -41,6 +41,7 @@ body {
   min-height: 100vh;
   background-color: var(--contentColor);
   color: var(--iconsColor);
+  transition: var(--transition);
 }
 
 /* header */
@@ -63,7 +64,7 @@ header {
 header .profileImage {
   width: 48px;
   height: 48px;
-  order: 2;
+  order: 3;
   position: relative;
 }
 
@@ -111,7 +112,7 @@ header .searchContainer > input {
   color: var(--iconsColor);
 }
 
-header .iconMenuToggle {
+header .iconMenuToggle, header .iconSwitchMode {
   border-radius: 50%;
   padding: 0.4em;
   width: 30px;
@@ -123,7 +124,7 @@ header .iconMenuToggle {
   transition: var(--transition);
   box-shadow: 0 0 4px 4px rgba(224, 17, 96, 0.224);
 }
-header .iconMenuToggle > i {
+header .iconMenuToggle > i, header .iconSwitchMode > i{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -134,6 +135,14 @@ header .iconMenuToggle.rotated {
   transform: rotate(180deg);
 }
 
+header .iconSwitchMode{
+  border: 2px var(--mainColor);
+  box-shadow: 0 0 4px 4px var(--contentColor);
+  order: 2;
+}
+header .iconSwitchMode > i {
+  color: var(--iconsColor);
+}
 /*navbar*/
 .verticalNavbar {
   width: 200px;

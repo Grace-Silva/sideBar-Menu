@@ -9,6 +9,7 @@ const seccionContenido = document.getElementById("contentSection");
 /* botón de estado */
 const estado = document.getElementById("stateIcon");
 //let color = "#ff4000";
+const botonColor = document.getElementById("modeButton");
 
 function cambiar() {
   botonMenu.classList.toggle("rotated");
@@ -22,3 +23,14 @@ function cambiarEstado() {
 
 botonMenu.addEventListener("click", cambiar);
 estado.addEventListener("click", cambiarEstado);
+
+
+botonColor.addEventListener("click", ()=>{
+  let toggleColorIcon = document.getElementById("toggleColorIcon");
+
+  toggleColorIcon.classList.toggle("fa-moon");
+  toggleColorIcon.classList.toggle("fa-sun");
+
+  /* cambio de todos los colores */
+  document.body.classList.toggle("lightMode");
+});
