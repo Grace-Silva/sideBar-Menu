@@ -9,32 +9,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-<body class="lightMode">
+<body class="">
 
     <!------------------------------->
     <!-- start header -->
     <header>
+        <!-- toggle menu icon -->
+        <div class="roundedButton" id="menu" title="show menu">
+            <i class="fa-solid fa-angles-left"></i>
+        </div>
+        <!-- search field -->
+        <label class="searchContainer">
+            <input type="search" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </label>
+        <!-- switch color icon -->
+        <div class="roundedButton" id="modeButton" title="change color">
+            <i class="fa-solid fa-sun" id="toggleColorIcon"></i>
+        </div>
         <!-- profile image -->
         <div class="profileImage">
             <img src="./img/avatar Grace4.jpg" alt="">
             <span class="state" id="stateIcon"></span>
         </div>
 
-        <!-- switch color icon -->
-        <div class="iconSwitchMode" id="modeButton" title="change color">
-            <i class="fa-solid fa-sun" id="toggleColorIcon"></i>        
-        </div>
-
-        <!-- search field -->
-        <label class="searchContainer">
-            <input type="search" placeholder="Search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </label>
-
-        <!-- toggle menu icon -->
-        <div class="iconMenuToggle" id="menu" title="show menu">
-            <i class="fa-solid fa-angles-left"></i>
-        </div>
     </header>
     <!-- end header -->
 
