@@ -1,3 +1,17 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "editor.fontFamily": "'DejaVu Sans Mono'",
+    "editor.codeActionsOnSave": {
+
+
+    },
+    "editor.fontSize": 14,
+    "files.autoSave": "afterDelay",
+    "editor.fontLigatures": false,
+    "terminal.integrated.autoReplies": {
+
+    },
+    "terminal.integrated.automationProfile.linux": {
+        
+    }
 }

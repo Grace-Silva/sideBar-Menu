@@ -27,13 +27,33 @@ function cambiarEstado () {
 botonMenu.addEventListener("click", contraerMenu);
 estado.addEventListener("click", cambiarEstado);
 
+
+// aplicar modo:
+function aplicarModo() {
+
+  const modoSalvado = localStorage.getItem("mode");
+
+  if (modoSalvado==="lightMode") {
+    document.body.classList.add("lightMode");
+  } else {
+    document.body.classList.remove("lightMode");
+  }
+}
+aplicarModo();
+
+
 botonColor.addEventListener("click", ()=>{
   /* ícono dentro del botón, cambia de sol a luna */
   let toggleColorIcon = document.getElementById("toggleColorIcon");
 
-  toggleColorIcon.classList.toggle("fa-moon");// clase propia de font awesome
   toggleColorIcon.classList.toggle("fa-sun");
+  toggleColorIcon.classList.toggle("fa-moon");// clase propia de font awesome
 
   document.body.classList.toggle("lightMode");
 
+    if (document.body.classList.contains("lightMode")) {
+      localStorage.setItem("mode", "lightMode");
+    } else {
+      localStorage.setItem("mode", "darkMode");
+    }
 });
