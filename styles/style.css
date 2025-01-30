@@ -166,7 +166,6 @@ header .roundedButton.rotated {
 .verticalNavbar .navlist .navItem .navlink {
   color: var(--iconsColor);
 }
-
 .verticalNavbar .navlist .navItem,
 .verticalNavbar .navlist .dropdownButton {
   padding: 1em;
@@ -179,6 +178,7 @@ header .roundedButton.rotated {
 .verticalNavbar .navlist .navItem:hover,
 .verticalNavbar .navlist .dropdownButton:hover {
   opacity: 1;
+  text-shadow: 0 0 8px var(--colorButton);
 }
 .verticalNavbar .navlist .dropdownButton {
   background-color: transparent;
