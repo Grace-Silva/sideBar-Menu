@@ -85,13 +85,13 @@ header .profileImage .state {
   height: 12px;
   border-radius: 50%;
   background-color: var(--green);
-  box-shadow: 0 0 4px 2px #08ec4b;
+  box-shadow: 0 0 4px 2px var(--green);/* default conectado */
   cursor: pointer;
   transition: var(--transition);
 }
 header .profileImage .state.offline {
   background-color: var(--red);
-  box-shadow: 0 0 4px 2px #e0115f;
+  box-shadow: 0 0 4px 2px var(--rubiRed);
 }
 
 header .searchContainer {
@@ -114,7 +114,11 @@ header .searchContainer > input {
   color: var(--iconsColor);
 }
 
-header .roundedButton{
+header .roundedButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--colorButton);
   border-radius: 50%;
   padding: 0.6em;
   width: 30px;
@@ -122,17 +126,10 @@ header .roundedButton{
   cursor: pointer;
   background-color: var(--contentColor);
   border: solid 1px var(--colorButton);
-  position: relative;
-  transition: var(--transition);
   box-shadow: 0 0 4px 4px var(--buttonGlow);
+  transition: var(--transition);
 }
-header .roundedButton > i{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--colorButton);
-}
+
 header .roundedButton.rotated {
   transform: rotate(180deg);
 }
@@ -144,11 +141,11 @@ header .roundedButton.rotated {
   position: fixed;
   top: 60px;
   left: 0;
+  padding: 2em 1em 0 2em;
   background-color: var(--mainColor);
   border: 1px solid var(--mainColor);
   box-shadow: 2px 0 4px 1px var(--glow);
   transition: var(--transition);
-  z-index: 999;
 }
 .verticalNavbar.hidden {
   transform: translateX(-100%);
@@ -160,28 +157,28 @@ header .roundedButton.rotated {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 2em .5em;
+  justify-content: flex-start;
   gap: 2em;
 }
 
 .verticalNavbar .navlist .navItem .navlink {
   color: var(--iconsColor);
 }
-.verticalNavbar .navlist .navItem,
-.verticalNavbar .navlist .dropdownButton {
+.verticalNavbar .navlist .navItem .navlink,
+.verticalNavbar .navlist .dropdownMenu .dropdownButton {
   width: 100%;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 1em;
-  padding: 1em;
+  gap: 6px;
   text-transform: capitalize;
   color: var(--iconsColor);
   cursor: pointer;
-  opacity: 0.6;
+  padding: 1em 0;
+  opacity: 0.7;
   transition: var(--transition);
 }
-.verticalNavbar .navlist .navItem:hover,
+.verticalNavbar .navlist .navItem .navlink:hover,
 .verticalNavbar .navlist .dropdownButton:hover {
   opacity: 1;
   text-shadow: 0 0 8px var(--colorButton);
@@ -190,19 +187,24 @@ header .roundedButton.rotated {
   background-color: transparent;
   border: none;
 }
-.dropdownMenu{
+.verticalNavbar .navlist .navItem .navlink i,
+.verticalNavbar .navlist .dropdownMenu .dropdownButton i {
+  font-size: 16px;
+}
+
+.dropdownMenu {
   transition: var(--transition);
 }
-.dropdownMenu .submenu{
+.dropdownMenu .submenu {
   margin-left: 1em;
   max-height: 0;
   overflow: hidden;
   transition: var(--transition);
 }
-.dropdownMenu:hover .submenu{
+.dropdownMenu:hover .submenu {
   max-height: 100%;
 }
-.dropdownMenu:hover .dropdownButton i{
+.dropdownMenu:hover .dropdownButton .fa-chevron-down {
   transform: rotate(180deg);
 }
 /* main content */
