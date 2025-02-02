@@ -15,6 +15,7 @@ const botonColor = document.getElementById("modeButton");
 /* contraer la barra de navegación y expandir el contenido principal. rota el ícono del botón 180 grados */
 function contraerMenu() {
   botonMenu.classList.toggle("rotated");
+  botonMenu.setAttribute("title", "Show Menu");
   barraDeNavegacion.classList.toggle("hidden");
   seccionContenido.classList.toggle("expanded");
   //estado.style.backgroundColor=color;
@@ -38,8 +39,10 @@ estado.addEventListener("click", ()=>{
 
   if (estado.classList.contains("offline")) {
     localStorage.setItem("state", "offline");
+    estado.title = "Offline";
   } else {
     localStorage.setItem("state", "online"); // configuración por default
+    estado.title = "Online";
   }
 });
 
@@ -47,7 +50,6 @@ estado.addEventListener("click", ()=>{
 //estado.addEventListener("click", cambiarEstado);
 
 
-// aplicar modo:
 // cambio de modo de color, oscuro a claro
 function aplicarModo() {
 
@@ -72,13 +74,16 @@ botonColor.addEventListener("click", ()=>{
   let toggleColorIcon = document.getElementById("toggleColorIcon");
 
   toggleColorIcon.classList.toggle("fa-moon");// clase propia de font awesome
+  botonColor.title = "Dark Mode";
   toggleColorIcon.classList.toggle("fa-sun");
 
   document.body.classList.toggle("lightMode");
 
     if (document.body.classList.contains("lightMode")) {
       localStorage.setItem("mode", "lightMode");
+      botonColor.title = "Light Mode";
     } else {
       localStorage.setItem("mode", "darkMode"); // darkmode por default
+      botonColor.title = "Dark Mode";
     }
 });
