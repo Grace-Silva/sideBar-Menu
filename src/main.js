@@ -28,8 +28,10 @@ function cambiarEstado () {
 
   if(estadoActual==="offline"){
     estado.classList.add("offline");
+    estado.title = "Offline";
   } else{
     estado.classList.remove("offline");
+    estado.title = "Online";
   }
   //estado.classList.toggle("offline");
 }
@@ -60,10 +62,12 @@ function aplicarModo() {
     /* alternar los íconos */
     toggleColorIcon.classList.remove("fa-moon");
     toggleColorIcon.classList.add("fa-sun");
+    botonColor.title = "Light Mode";
   } else {
     document.body.classList.remove("lightMode");
     toggleColorIcon.classList.remove("fa-sun");
     toggleColorIcon.classList.add("fa-moon");
+    botonColor.title = "Dark Mode";
   }
 }
 aplicarModo();
