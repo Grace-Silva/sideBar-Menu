@@ -201,10 +201,13 @@ header .roundedButton.rotated {
   overflow: hidden;
   transition: var(--transition);
 }
-.dropdownMenu:hover .submenu {
+/*.dropdownMenu:hover .submenu {
+  max-height: 100%;
+}*/
+.dropdownMenu.show .submenu{
   max-height: 100%;
 }
-.dropdownMenu:hover .dropdownButton .fa-chevron-down {
+.dropdownMenu.show .fa-chevron-down {
   transform: rotate(180deg);
 }
 /* main content */

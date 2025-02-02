@@ -87,3 +87,14 @@ botonColor.addEventListener("click", ()=>{
       botonColor.title = "Dark Mode";
     }
 });
+
+const botonesExpandibles = document.querySelectorAll(".dropdownButton");
+
+botonesExpandibles.forEach((e) =>{
+  e.addEventListener("click", ()=>{
+    const dropDownMenu = e.parentElement;
+    const flecha = e.lastChild;
+    dropDownMenu.classList.toggle("show");
+    flecha.classList.toggle("show")
+  });
+});
