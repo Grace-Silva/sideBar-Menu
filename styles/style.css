@@ -123,8 +123,8 @@ header .roundedButton {
   color: var(--colorButton);
   border-radius: 50%;
   padding: 0.6em;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   cursor: pointer;
   background-color: var(--contentColor);
   border: solid 1px var(--colorButton);
@@ -251,44 +251,6 @@ header .roundedButton.rotated {
 }
 
 /* media queries*/
-
-/* 1300px desktop and laptop */
-@media(max-width: 1300px){
-
-  .content {
-    grid-template-columns: repeat(2, 1fr);
-  } 
-  
-}
-
-@media(max-width: 1060px){
-
-  header .searchContainer{
-    width: calc(60% - 36px);
-  }  
-}
-
-@media (max-width: 980px){
-
-  .content{
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media(max-width: 768px){
-  .searchContainer{
-    width: calc(40% - 36px);
-  }
-}
-
-@media(max-width: 576px){
-
-  header .searchContainer{
-    display: none;
-  }
-
-}
-
 @media(max-width: 320px){
   .verticalNavbar{
     position: absolute;
@@ -300,6 +262,10 @@ header .roundedButton.rotated {
     left: -100%;
   }
 
+  .main-content{
+    margin-top: 40px;
+  }
+
   .content {
     margin-left: 0px;
     padding: 1em;
@@ -309,3 +275,61 @@ header .roundedButton.rotated {
     margin-left: 0;
   }
 }
+
+@media(max-width: 576px){
+
+  header .searchContainer{
+    display: none;
+  }
+  .roundedButton{
+    width: 28px;
+    height: 28px;
+  }
+
+}
+
+@media(max-width: 768px){
+  header{
+    padding: 0 1em;
+  }
+  .searchContainer{
+    width: calc(40% - 36px);
+  }
+  .verticalNavbar{
+    width: 180px;
+    padding: 2em 0 0 1em;
+  }
+  .content{
+    margin-left: 180px;
+    padding: 2em 1em;
+  }
+}
+
+@media (max-width: 980px){
+
+  .content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media(max-width: 1060px){
+
+  header .searchContainer{
+    width: calc(60% - 36px);
+  }  
+}
+
+/* 1300px desktop and laptop */
+@media(max-width: 1300px){
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  
+}
+
+
+
+
+
+
