@@ -123,8 +123,8 @@ header .roundedButton {
   color: var(--colorButton);
   border-radius: 50%;
   padding: 0.6em;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
   background-color: var(--contentColor);
   border: solid 1px var(--colorButton);
@@ -248,4 +248,64 @@ header .roundedButton.rotated {
 .content .container .containerParagraph {
   color: var(--textColor);
   font-size: 1.1em;
+}
+
+/* media queries*/
+
+/* 1300px desktop and laptop */
+@media(max-width: 1300px){
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  
+}
+
+@media(max-width: 1060px){
+
+  header .searchContainer{
+    width: calc(60% - 36px);
+  }  
+}
+
+@media (max-width: 980px){
+
+  .content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media(max-width: 768px){
+  .searchContainer{
+    width: calc(40% - 36px);
+  }
+}
+
+@media(max-width: 576px){
+
+  header .searchContainer{
+    display: none;
+  }
+
+}
+
+@media(max-width: 320px){
+  .verticalNavbar{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+  .verticalNavbar.verticalNavbar.hidden{
+    left: -100%;
+  }
+
+  .content {
+    margin-left: 0px;
+    padding: 1em;
+    gap: 1em;
+  }
+  .content.expanded {
+    margin-left: 0;
+  }
 }
