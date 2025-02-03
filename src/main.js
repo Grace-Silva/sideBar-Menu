@@ -9,7 +9,7 @@ const seccionContenido = document.getElementById("contentSection");
 /* botón de estado */
 const estado = document.getElementById("stateIcon");
 //let color = "#ff4000";
-/* botón para contraerMenu de color */
+/* botón para cambiar el modo de color */
 const botonColor = document.getElementById("modeButton");
 
 /* contraer la barra de navegación y expandir el contenido principal. rota el ícono del botón 180 grados */
@@ -20,9 +20,9 @@ function contraerMenu() {
   seccionContenido.classList.toggle("expanded");
   //estado.style.backgroundColor=color;
 }
-botonMenu.addEventListener("click", contraerMenu);
+  botonMenu.addEventListener("click", contraerMenu);
 
-// cambia el color del ícono de estado
+// guarda el color del ícono de estado
 function cambiarEstado () {
   const estadoActual = localStorage.getItem("state");
 
@@ -35,7 +35,8 @@ function cambiarEstado () {
   }
   //estado.classList.toggle("offline");
 }
-cambiarEstado();
+  cambiarEstado();
+  // cambia el color del ícono de estado  
 estado.addEventListener("click", ()=>{
   estado.classList.toggle("offline");
 
@@ -47,8 +48,6 @@ estado.addEventListener("click", ()=>{
     estado.title = "Online";
   }
 });
-
-
 //estado.addEventListener("click", cambiarEstado);
 
 

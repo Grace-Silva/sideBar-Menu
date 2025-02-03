@@ -113,7 +113,9 @@ header .searchContainer > input {
   outline: none;
   color: var(--iconsColor);
 }
-
+header .searchContainer > input[type="search"]::-webkit-search-cancel-button{
+  display: none;
+}
 header .roundedButton {
   display: inline-flex;
   justify-content: center;
@@ -201,11 +203,15 @@ header .roundedButton.rotated {
   overflow: hidden;
   transition: var(--transition);
 }
+
 /*.dropdownMenu:hover .submenu {
   max-height: 100%;
 }*/
 .dropdownMenu.show .submenu{
   max-height: 100%;
+}
+.dropdownMenu .fa-chevron-down{
+  transition: var(--transition);
 }
 .dropdownMenu.show .fa-chevron-down {
   transform: rotate(180deg);
