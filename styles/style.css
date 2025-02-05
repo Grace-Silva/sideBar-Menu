@@ -54,7 +54,7 @@ header {
   z-index: 1000;
   top: 0;
   left: 0;
-  width: 100%;
+  max-width: 100vw;
   height: 60px;
   padding: 0 2em;
   display: flex;
@@ -250,14 +250,76 @@ header .roundedButton.rotated {
   font-size: 1.1em;
 }
 
+
+/* 1300px desktop and laptop */
+@media(max-width: 1300px){
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
+  } 
+  
+}
+
+@media(max-width: 1060px){
+
+  header .searchContainer{
+    width: calc(60% - 36px);
+  }  
+}
+
+@media(max-width: 980px){
+
+  .content{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+}
+
+@media(max-width: 768px){
+
+  header{
+    padding: 0 1em;
+  }
+
+  .searchContainer{
+    width: calc(40% - 36px);
+  }
+
+  .verticalNavbar{
+    width: 180px;
+    padding: 2em 0 0 1em;
+  }
+
+  .content{
+    margin-left: 180px;
+    padding: 2em 1em;
+  }
+
+}
+
+@media(max-width: 576px){
+
+  header .searchContainer{
+    display: none;
+  }
+
+  .roundedButton{
+    width: 28px;
+    height: 28px;
+  }
+
+}
+
 /* media queries*/
 @media(max-width: 320px){
+
   .verticalNavbar{
     position: absolute;
     top: 60px;
     left: 0;
     z-index: 1000;
   }
+
   .verticalNavbar.verticalNavbar.hidden{
     left: -100%;
   }
@@ -271,65 +333,11 @@ header .roundedButton.rotated {
     padding: 1em;
     gap: 1em;
   }
+
   .content.expanded {
     margin-left: 0;
   }
 }
-
-@media(max-width: 576px){
-
-  header .searchContainer{
-    display: none;
-  }
-  .roundedButton{
-    width: 28px;
-    height: 28px;
-  }
-
-}
-
-@media(max-width: 768px){
-  header{
-    padding: 0 1em;
-  }
-  .searchContainer{
-    width: calc(40% - 36px);
-  }
-  .verticalNavbar{
-    width: 180px;
-    padding: 2em 0 0 1em;
-  }
-  .content{
-    margin-left: 180px;
-    padding: 2em 1em;
-  }
-}
-
-@media (max-width: 980px){
-
-  .content{
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media(max-width: 1060px){
-
-  header .searchContainer{
-    width: calc(60% - 36px);
-  }  
-}
-
-/* 1300px desktop and laptop */
-@media(max-width: 1300px){
-
-  .content {
-    grid-template-columns: repeat(2, 1fr);
-  } 
-  
-}
-
-
-
 
 
 
