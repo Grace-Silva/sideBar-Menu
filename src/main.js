@@ -15,29 +15,34 @@ const botonColor = document.getElementById("modeButton");
 /* contraer la barra de navegación y expandir el contenido principal. rota el ícono del botón 180 grados */
 function contraerMenu() {
   botonMenu.classList.toggle("rotated");
-  botonMenu.setAttribute("title", "Show Menu");
+
   barraDeNavegacion.classList.toggle("hidden");
   seccionContenido.classList.toggle("expanded");
   //estado.style.backgroundColor=color;
+  if (barraDeNavegacion.classList.contains("hidden")) {
+    botonMenu.title = "Show Menu"; // Si el menú está oculto, el botón debe "mostrarlo"
+  } else {
+    botonMenu.title = "Hide Menu"; // Si el menú está visible, el botón debe "ocultarlo"
+  }
 }
-  botonMenu.addEventListener("click", contraerMenu);
+botonMenu.addEventListener("click", contraerMenu);
 
 // guarda el color del ícono de estado
-function cambiarEstado () {
+function cambiarEstado() {
   const estadoActual = localStorage.getItem("state");
 
-  if(estadoActual==="offline"){
+  if (estadoActual === "offline") {
     estado.classList.add("offline");
     estado.title = "Offline";
-  } else{
+  } else {
     estado.classList.remove("offline");
     estado.title = "Online";
   }
   //estado.classList.toggle("offline");
 }
-  cambiarEstado();
-  // cambia el color del ícono de estado  
-estado.addEventListener("click", ()=>{
+cambiarEstado();
+// cambia el color del ícono de estado
+estado.addEventListener("click", () => {
   estado.classList.toggle("offline");
 
   if (estado.classList.contains("offline")) {
@@ -50,13 +55,11 @@ estado.addEventListener("click", ()=>{
 });
 //estado.addEventListener("click", cambiarEstado);
 
-
 // cambio de modo de color, oscuro a claro
 function aplicarModo() {
-
   const modoSalvado = localStorage.getItem("mode");
 
-  if (modoSalvado==="lightMode") {
+  if (modoSalvado === "lightMode") {
     document.body.classList.add("lightMode");
     /* alternar los íconos */
     toggleColorIcon.classList.remove("fa-moon");
@@ -71,33 +74,32 @@ function aplicarModo() {
 }
 aplicarModo();
 
-
-botonColor.addEventListener("click", ()=>{
+botonColor.addEventListener("click", () => {
   /* ícono dentro del botón, cambia de sol a luna */
   let toggleColorIcon = document.getElementById("toggleColorIcon");
 
-  toggleColorIcon.classList.toggle("fa-moon");// clase propia de font awesome
+  toggleColorIcon.classList.toggle("fa-moon"); // clase propia de font awesome
   botonColor.title = "Dark Mode";
   toggleColorIcon.classList.toggle("fa-sun");
 
   document.body.classList.toggle("lightMode");
 
-    if (document.body.classList.contains("lightMode")) {
-      localStorage.setItem("mode", "lightMode");
-      botonColor.title = "Light Mode";
-    } else {
-      localStorage.setItem("mode", "darkMode"); // darkmode por default
-      botonColor.title = "Dark Mode";
-    }
+  if (document.body.classList.contains("lightMode")) {
+    localStorage.setItem("mode", "lightMode");
+    botonColor.title = "Light Mode";
+  } else {
+    localStorage.setItem("mode", "darkMode"); // darkmode por default
+    botonColor.title = "Dark Mode";
+  }
 });
 
 const botonesExpandibles = document.querySelectorAll(".dropdownButton");
 
-botonesExpandibles.forEach((e) =>{
-  e.addEventListener("click", ()=>{
+botonesExpandibles.forEach((e) => {
+  e.addEventListener("click", () => {
     const dropDownMenu = e.parentElement;
     const flecha = e.lastChild;
     dropDownMenu.classList.toggle("show");
-    flecha.classList.toggle("show")
+    flecha.classList.toggle("show");
   });
 });

@@ -22,9 +22,10 @@
   --contentColor: #f1f1f1;
   --iconsColor: #1e1e27;
   --textColor: rgba(0, 0, 0, 0.6);
-  --glow: rgba(30, 30, 19, 0.1);
-  --buttonGlow: var(--glow);
+  --glow: rgba(0, 0, 0, 0.05);
+  --buttonGlow: rgba(0, 0, 0, 0.1);
   --colorButton: var(--textColor);
+  --textGlow: rgba(0, 0, 0, 0.15);
 }
 
 * {
@@ -85,7 +86,7 @@ header .profileImage .state {
   height: 12px;
   border-radius: 50%;
   background-color: var(--green);
-  box-shadow: 0 0 4px 2px var(--green);/* default conectado */
+  box-shadow: 0 0 4px 2px var(--green); /* default conectado */
   cursor: pointer;
   transition: var(--transition);
 }
@@ -113,7 +114,7 @@ header .searchContainer > input {
   outline: none;
   color: var(--iconsColor);
 }
-header .searchContainer > input[type="search"]::-webkit-search-cancel-button{
+header .searchContainer > input[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 header .roundedButton {
@@ -122,7 +123,7 @@ header .roundedButton {
   align-items: center;
   color: var(--colorButton);
   border-radius: 50%;
-  padding: 0.6em;
+  padding: 0.8em;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -131,7 +132,9 @@ header .roundedButton {
   box-shadow: 0 0 4px 4px var(--buttonGlow);
   transition: var(--transition);
 }
-
+.lightMode .roundedButton {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra suave hacia abajo */
+}
 header .roundedButton.rotated {
   transform: rotate(180deg);
 }
@@ -172,19 +175,30 @@ header .roundedButton.rotated {
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   text-transform: capitalize;
   color: var(--iconsColor);
   cursor: pointer;
-  padding: 1em 0;
+  padding: 1.2em 0;
   opacity: 0.7;
   transition: var(--transition);
 }
 .verticalNavbar .navlist .navItem .navlink:hover,
-.verticalNavbar .navlist .dropdownButton:hover {
+.verticalNavbar .navlist .dropdownButton:hover,
+.verticalNavbar .navlist .navItem .navlink:focus,
+.verticalNavbar .navlist .dropdownButton:focus {
   opacity: 1;
   text-shadow: 0 0 8px var(--colorButton);
+  outline: none;
 }
+
+.lightMode .verticalNavbar .navlist .navItem .navlink:hover,
+.lightMode .verticalNavbar .navlist .dropdownButton:hover,
+.lightMode .verticalNavbar .navlist .navItem .navlink:focus,
+.lightMode .verticalNavbar .navlist .dropdownButton:focus {
+  text-shadow: none;
+}
+
 .verticalNavbar .navlist .dropdownButton {
   background-color: transparent;
   border: none;
@@ -203,14 +217,17 @@ header .roundedButton.rotated {
   overflow: hidden;
   transition: var(--transition);
 }
+.dropdownMenu .submenu .navItem .navlink{
+  padding: 0.8em 0;
+}
 
 /*.dropdownMenu:hover .submenu {
   max-height: 100%;
 }*/
-.dropdownMenu.show .submenu{
+.dropdownMenu.show .submenu {
   max-height: 100%;
 }
-.dropdownMenu .fa-chevron-down{
+.dropdownMenu .fa-chevron-down {
   transition: var(--transition);
 }
 .dropdownMenu.show .fa-chevron-down {
@@ -250,81 +267,75 @@ header .roundedButton.rotated {
   font-size: 1.1em;
 }
 
-
 /* 1300px desktop and laptop */
-@media(max-width: 1300px){
-
+@media (max-width: 1300px) {
   .content {
     grid-template-columns: repeat(2, 1fr);
-  } 
-  
+  }
 }
 
-@media(max-width: 1060px){
-
-  header .searchContainer{
+@media (max-width: 1060px) {
+  header .searchContainer {
     width: calc(60% - 36px);
-  }  
+  }
 }
 
-@media(max-width: 980px){
-
-  .content{
+@media (max-width: 980px) {
+  .content {
     grid-template-columns: repeat(1, 1fr);
   }
-
 }
 
-@media(max-width: 768px){
-
-  header{
+@media (max-width: 768px) {
+  header {
     padding: 0 1em;
   }
 
-  .searchContainer{
+  .searchContainer {
     width: calc(40% - 36px);
   }
 
-  .verticalNavbar{
+  .verticalNavbar {
     width: 180px;
     padding: 2em 0 0 1em;
   }
 
-  .content{
+  .content {
     margin-left: 180px;
     padding: 2em 1em;
   }
-
 }
 
-@media(max-width: 576px){
-
-  header .searchContainer{
+@media (max-width: 576px) {
+  header .searchContainer {
     display: none;
   }
 
-  .roundedButton{
+  .roundedButton {
     width: 28px;
     height: 28px;
   }
 
+  .navlink, .dropdownButton {
+    padding: 0.8em 0; 
+    gap: 4px;
+}
 }
 
 /* media queries*/
-@media(max-width: 320px){
-
-  .verticalNavbar{
+@media (max-width: 320px) {
+  .verticalNavbar {
     position: absolute;
     top: 60px;
     left: 0;
     z-index: 1000;
   }
 
-  .verticalNavbar.verticalNavbar.hidden{
+  .verticalNavbar.verticalNavbar.hidden {
     left: -100%;
   }
 
-  .main-content{
+  .main-content {
     margin-top: 40px;
   }
 
@@ -338,6 +349,3 @@ header .roundedButton.rotated {
     margin-left: 0;
   }
 }
-
-
-
